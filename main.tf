@@ -13,12 +13,12 @@ locals {
 }
 
 provider "snowflake" {
-    organization_name = local.organization_name
-    account_name      = local.account_name
+    organization_name = "ejdotvm"
+    account_name      = "nj07014"
     user              = "TERRAFORM_SVC"
     role              = "SYSADMIN"
     authenticator     = "SNOWFLAKE_JWT"
-    private_key       = file(local.private_key_path)
+    private_key       = file("~/.ssh/snowflake_tf_snow_key.p8")
 }
 
 resource "snowflake_database" "tf_db" {
